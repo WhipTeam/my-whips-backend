@@ -12,26 +12,26 @@ My Whips is a way to showcase your personal car collection. Each of our users ca
 ### List of models and their properties
 
 User = {\
- name: String,\
-    googleId: String,\
-    garage: [{ref: 'Garage'}],\
+name: String,\
+googleId: String,\
+garage: [{ref: 'Garage'}],\
 }
 
-Garage = {
-    cars: [{
-        make: String,
-        model: String,
-        year: Number,
-        carName: String,
-        engine: String,
-        transmission: String,
-        HP: Number,
-        topSpeed: Number,
-        img: String,
-        zeroToSixty: String,
-        description: String,
-    }]
-}
+Garage = {\
+cars: [{\
+make: String,\
+model: String,\
+year: Number,\
+carName: String,\
+engine: String,\
+transmission: String,\
+HP: Number,\
+topSpeed: Number,\
+img: String,\
+zeroToSixty: String,\
+description: String,\
+}]\
+}\
 
 ### Scrum manager
 
