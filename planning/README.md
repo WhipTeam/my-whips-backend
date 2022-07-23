@@ -11,10 +11,10 @@ My Whips is a way to showcase your personal car collection. Each of our users ca
 
 ### List of models and their properties
 
-User = {
-    name: String,
-    googleId: String,
-    garage: [{ref: 'Garage'}],
+User = {\
+ name: String,\
+    googleId: String,\
+    garage: [{ref: 'Garage'}],\
 }
 
 Garage = {
@@ -47,6 +47,15 @@ Aman Alem
 - As a user, I'd like the ability to delete cars from my garage.
 - As a user, I'd like the ability to use Google OAuth to login.
 - As a user, I'd like the ability to view other user's Garages.
+
+### Stretch Goals
+
+- User can add a dream car to their garage
+- User can upload image files.
+- User can add friends.
+- User can view friends' garages.
+- User can log in with methods other than Google oAuth (i.e. GitHub, twitter, username/password...).
+- User can filter through cars in garages.
 
 ### Wireframes
 
