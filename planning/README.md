@@ -1,9 +1,9 @@
 ### Group Members
 
-Aman Alem
-Jonathan Rosario
-Plentis Dupree, III
-Corey Kim
+- Aman Alem
+- Jonathan Rosario
+- Plentis Dupree, III
+- Corey Kim
 
 ### My Whips
 
@@ -39,14 +39,14 @@ Aman Alem
 
 ### User stories
 
-*As a user, I'd like the ability to create my own personal garage of cars.
-*As a user, I'd like the ability to search for cars by year, make, and model using an api.
-*As a user, I'd like the ability to add cars to my garage.
-*As a user, I'd like the ability to see a car's details.
-*As a user, I'd like the ability to update a car in my garage.
-*As a user, I'd like the ability to delete cars from my garage.
-*As a user, I'd like the ability to use Google OAuth to login.
-*As a user, I'd like the ability to view other user's Garages.
+- As a user, I'd like the ability to create my own personal garage of cars.
+- As a user, I'd like the ability to search for cars by year, make, and model using an api.
+- As a user, I'd like the ability to add cars to my garage.
+- As a user, I'd like the ability to see a car's details.
+- As a user, I'd like the ability to update a car in my garage.
+- As a user, I'd like the ability to delete cars from my garage.
+- As a user, I'd like the ability to use Google OAuth to login.
+- As a user, I'd like the ability to view other user's Garages.
 
 ### Wireframes
 
