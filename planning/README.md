@@ -51,4 +51,5 @@ Aman Alem
 ### Wireframes
 
 ![My Whips Wireframe 1](./Wireframes/MyWhipsWF1.png)
-![My Whips Wireframe 2/3](./Wireframes/MyWhipsWF2.png)
+![My Whips Wireframe 2](./Wireframes/MyWhipsWF2.png)
+![My Whips Wireframe 3](./Wireframes/MyWhipsWF3.png)
