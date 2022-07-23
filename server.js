@@ -7,7 +7,7 @@ require('./db/connection')
 const garageRoutes = require('./routes/garageRoutes')
 const userRoutes = require('./routes/userRoutes')
 
-app.use(core())
+app.use(cors())
 app.use(morgan('dev'))
 app.use(express.json)
 app.use(express.urlencoded({ extended: true }))
