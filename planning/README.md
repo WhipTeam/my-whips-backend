@@ -19,19 +19,19 @@ garage: [{ref: 'Garage'}],\
 
 Garage = {\
 cars: [{\
-make: String,\
-model: String,\
-year: Number,\
-carName: String,\
-engine: String,\
-transmission: String,\
-HP: Number,\
-topSpeed: Number,\
-img: String,\
-zeroToSixty: String,\
-description: String,\
-}]\
-}\
+ make: String,\
+ model: String,\
+ year: Number,\
+ carName: String,\
+ engine: String,\
+ transmission: String,\
+ HP: Number,\
+ topSpeed: Number,\
+ img: String,\
+ zeroToSixty: String,\
+ description: String,\
+ }]\
+}
 
 ### Scrum manager
 
