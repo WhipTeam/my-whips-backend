@@ -35,6 +35,16 @@ Garage = {
 }
 ```
 
+### Pages
+
+Landing Page: /login
+My Garage: /mygarage
+Details: /mygarage/:carId
+Edit: /mygarage/:carId/edit
+New Whip: /mygarage/newwhip
+Garages: /garages
+Someone's Garage: /garages/:garageId
+
 ### Scrum manager
 
 Aman Alem
@@ -64,3 +74,9 @@ Aman Alem
 ![My Whips Wireframe 1](./Wireframes/MyWhipsWF1.png)
 ![My Whips Wireframe 2](./Wireframes/MyWhipsWF2.png)
 ![My Whips Wireframe 3](./Wireframes/MyWhipsWF3.png)
+
+### React Modules
+
+- react-router-dom@6
+- styled-components
+- axios
