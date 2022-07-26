@@ -1,0 +1,1 @@
+const Garage = require('../model/Garages')
