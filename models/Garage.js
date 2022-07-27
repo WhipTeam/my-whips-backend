@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const garageSchema = new mongoose.Schema({
+  img: String,
   cars: [
     {
       make: String,
