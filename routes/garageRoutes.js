@@ -5,7 +5,7 @@ const garageCtrl = require("../controllers/garageCtrl.js");
 router.get("/", garageCtrl.index);
 
 // create
-router.post("/", garageCtrl.create);
+router.put("/", garageCtrl.create);
 
 // show
 router.get("/:id", garageCtrl.show);

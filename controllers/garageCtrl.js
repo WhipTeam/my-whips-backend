@@ -10,7 +10,21 @@ const index = (req, res) => {
   });
 };
 
-const create = (req, res) => {};
+const create = (req, res) => {
+  console.log(req.body);
+  Garage.findByIdAndUpdate(
+    { _id: req.body.garageId },
+    {
+      $push: {
+        whips: {
+          make: req.body.make,
+          model: req.body.model,
+          year: req.body.year,
+        },
+      },
+    }
+  );
+};
 
 const show = (req, res) => {};
 

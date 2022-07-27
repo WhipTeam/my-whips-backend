@@ -1,6 +1,6 @@
 [
     {
-        "cars": [
+        "whips": [
             {
                 "make": "BMW",
                 "model": "X5",
@@ -44,7 +44,7 @@
         
     },
     {
-        "cars": [
+        "whips": [
             {
                 "make": "BMW",
                 "model": "X5",
@@ -88,7 +88,7 @@
         
     },
     {
-        "cars": [
+        "whips": [
             {
                 "make": "BMW",
                 "model": "X5",
