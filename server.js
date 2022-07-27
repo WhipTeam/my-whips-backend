@@ -3,6 +3,7 @@ const app = express();
 const PORT = 3000;
 const userRoutes = require("./routes/userRoutes");
 const garageRoutes = require("./routes/garageRoutes");
+const garagesRoutes = require("./routes/garagesRoutes");
 
 const methodOverride = require("method-override");
 const cors = require("cors");
@@ -19,6 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // mount routes
 app.use("/garage", garageRoutes);
+app.use("/garages", garagesRoutes);
 app.use("/login", userRoutes);
 
 app.get("/", (req, res) => res.json("Welcome to My Whips!"));
