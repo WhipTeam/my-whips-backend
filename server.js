@@ -7,7 +7,6 @@ const garageRoutes = require("./routes/garageRoutes");
 const methodOverride = require("method-override");
 const cors = require("cors");
 const morgan = require("morgan");
-const { urlencoded } = require("express");
 
 // require database
 require("./db/connection");
