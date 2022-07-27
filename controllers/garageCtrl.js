@@ -1,6 +1,14 @@
 const Garage = require("../models/Garage");
 
-const index = (req, res) => {};
+const index = (req, res) => {
+  Garage.find({}, (err, garages) => {
+    if (err) {
+      res.status(400).json(err);
+      return;
+    }
+    res.json(garages[0]);
+  });
+};
 
 const create = (req, res) => {};
 
