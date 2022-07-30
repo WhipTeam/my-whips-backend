@@ -17,6 +17,11 @@ const garageSchema = new mongoose.Schema({
       description: String,
     },
   ],
+  owner: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
 });
 
 const Garage = mongoose.model("Garage", garageSchema);
