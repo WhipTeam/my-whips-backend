@@ -12,7 +12,10 @@ bcrypt.hash("ABC123", 8, (err, hash) => {
         { name: "Aman", password: hash },
         { name: "Corey", password: hash },
         { name: "PJ", password: hash },
-      ]);
+      ])
+      .then((users) => {
+        console.log(users)
+      });
     })
     .then(() => {
       Garage.deleteMany({})

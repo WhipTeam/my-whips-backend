@@ -42,7 +42,21 @@ const show = (req, res) => {};
 
 const update = (req, res) => {};
 
-const deleteWhip = (req, res) => {};
+function deleteWhip(req, res) {
+  Garage.findById(req.body.garageId, (err, garage) => {
+    
+    if (err) {
+      res.status(400).json(err)
+      return
+    }
+    
+    let whips = garage.whips
+
+    whips.id(req.params.id).remove()
+    garage.save(err => err)
+    res.redirect('/garage')
+  })
+}
 
 module.exports = {
   index,
