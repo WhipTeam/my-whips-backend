@@ -1,22 +1,22 @@
 const router = require("express").Router();
-const garageCTRL = require("../controllers/garageController");
+const garageCtrl = require("../controllers/garageCtrl.js");
 
 // index
-router.get("/", garageCTRL.index);
+router.get("/", garageCtrl.index);
 
-// create
-router.post("/", garageCTRL.create);
+// createGarage
+router.post("/", garageCtrl.createGarage);
+
+// createWhip
+router.put("/", garageCtrl.createWhip);
 
 // show
-router.get("/:id", garageCTRL.show);
+router.get("/:id", garageCtrl.show);
 
 // update
-router.put("/:id", garageCTRL.update);
+router.put("/:id", garageCtrl.update);
 
 // delete
-router.delete("/:id", garageCTRL.delete);
-
-// test
-router.get("/test", garageCTRL.test);
+router.delete("/:id", garageCtrl.delete);
 
 module.exports = router;
