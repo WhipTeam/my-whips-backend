@@ -4,6 +4,7 @@ const PORT = 3000;
 const userRoutes = require("./routes/userRoutes");
 const garageRoutes = require("./routes/garageRoutes");
 const garagesRoutes = require("./routes/garagesRoutes");
+const signupRoute = require("./routes/userSignupRoute");
 
 const methodOverride = require("method-override");
 const cors = require("cors");
@@ -22,6 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/garage", garageRoutes);
 app.use("/garages", garagesRoutes);
 app.use("/login", userRoutes);
+app.use("/signup", signupRoute);
 
 app.get("/", (req, res) => res.json("Welcome to My Whips!"));
 
