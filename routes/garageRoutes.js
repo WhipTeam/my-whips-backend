@@ -4,8 +4,11 @@ const garageCtrl = require("../controllers/garageCtrl.js");
 // index
 router.get("/", garageCtrl.index);
 
-// create
-router.put("/", garageCtrl.create);
+// createGarage
+router.post("/", garageCtrl.createGarage);
+
+// createWhip
+router.put("/", garageCtrl.createWhip);
 
 // show
 router.get("/:id", garageCtrl.show);

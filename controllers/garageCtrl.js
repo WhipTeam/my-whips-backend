@@ -11,23 +11,13 @@ const index = (req, res) => {
   });
 };
 
-// const create = (req, res) => {
-//   console.log(req.body);
-//   Garage.findByIdAndUpdate(
-//     { _id: req.body.garageId },
-//     {
-//       $push: {
-//         whips: {
-//           make: req.body.make,
-//           model: req.body.model,
-//           year: req.body.year,
-//         },
-//       },
-//     }
-//   );
-// };
+const createGarage = async (req, res) => {
+  let newGarage = await Garage.create(req.body);
 
-const create = (req, res) => {
+  res.json(newGarage);
+};
+
+const createWhip = (req, res) => {
   console.log("create function is hit");
   let newWhip = req.body;
   Garage.updateOne(
@@ -43,6 +33,7 @@ const create = (req, res) => {
         return;
       }
       res.json(garage);
+      console.log(garage);
     }
   );
 };
@@ -55,8 +46,9 @@ const deleteWhip = (req, res) => {};
 
 module.exports = {
   index,
-  create,
+  createWhip,
   show,
   update,
   delete: deleteWhip,
+  createGarage,
 };
