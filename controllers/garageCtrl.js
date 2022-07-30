@@ -40,7 +40,19 @@ const createWhip = (req, res) => {
 
 const show = (req, res) => {};
 
-const update = (req, res) => {};
+const update = (req, res) => {
+    Garage.findById(req.body.garageId).then(garage => {
+      let whip = garage.whips.id(req.params.id);
+      whip.remove()
+      garage.whips.push({ make: req.body.make, model: req.body.model, year: req.body.year })
+      garage.save()
+    
+    }).then(() => {
+      res.redirect('/garage')
+    }).catch(err => {
+    });
+  };
+
 
 function deleteWhip(req, res) {
   Garage.findById(req.body.garageId, (err, garage) => {
@@ -49,7 +61,7 @@ function deleteWhip(req, res) {
       res.status(400).json(err)
       return
     }
-    
+
     let whips = garage.whips
 
     whips.id(req.params.id).remove()
