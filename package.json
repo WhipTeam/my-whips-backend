@@ -17,7 +17,6 @@
     "url": "https://github.com/WhipTeam/my-whips-backend/issues"
   },
   "homepage": "https://github.com/WhipTeam/my-whips-backend#readme",
-
   "description": "",
   "dependencies": {
     "bcrypt": "^5.0.1",
@@ -27,5 +26,4 @@
     "mongoose": "^6.4.6",
     "morgan": "^1.10.0"
   }
-
 }
