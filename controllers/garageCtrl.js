@@ -19,12 +19,17 @@ const createGarage = async (req, res) => {
 
 const createWhip = (req, res) => {
   console.log("create function is hit");
-  let newWhip = req.body;
   Garage.updateOne(
-    { _id: newWhip.garageId },
+    { _id: req.body.garageId },
     {
       $push: {
-        whips: { make: newWhip.make, model: newWhip.model, year: newWhip.year },
+        whips: {
+          make: req.body.make,
+          model: req.body.model,
+          year: req.body.year,
+          img: req.body.img,
+          description: req.body.description,
+        },
       },
     },
     (err, garage) => {
@@ -38,36 +43,54 @@ const createWhip = (req, res) => {
   );
 };
 
-const show = (req, res) => {};
+const show = (req, res) => {
+  Garage.findById(req.body.garageId, (err, garage) => {
+    if (err) {
+      res.status(400).json(err);
+      return;
+    }
+
+    let whip = garage.whips.id(req.params.id);
+
+    res.json(whip);
+    // garage.save(err => err)
+    // res.redirect('/garage')
+  });
+};
 
 const update = (req, res) => {
-    Garage.findById(req.body.garageId).then(garage => {
+  Garage.findById(req.body.garageId)
+    .then((garage) => {
       let whip = garage.whips.id(req.params.id);
-      whip.remove()
-      garage.whips.push({ make: req.body.make, model: req.body.model, year: req.body.year })
-      garage.save()
-    
-    }).then(() => {
-      res.redirect('/garage')
-    }).catch(err => {
-    });
-  };
-
+      whip.remove();
+      garage.whips.push({
+        make: req.body.make,
+        model: req.body.model,
+        year: req.body.year,
+        img: req.body.img,
+        description: req.body.description,
+      });
+      garage.save();
+    })
+    .then(() => {
+      res.redirect("/garage");
+    })
+    .catch((err) => {});
+};
 
 function deleteWhip(req, res) {
   Garage.findById(req.body.garageId, (err, garage) => {
-    
     if (err) {
-      res.status(400).json(err)
-      return
+      res.status(400).json(err);
+      return;
     }
 
-    let whips = garage.whips
+    let whips = garage.whips;
 
-    whips.id(req.params.id).remove()
-    garage.save(err => err)
-    res.redirect('/garage')
-  })
+    whips.id(req.params.id).remove();
+    garage.save((err) => err);
+    res.redirect("/garage");
+  });
 }
 
 module.exports = {
