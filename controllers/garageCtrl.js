@@ -2,7 +2,8 @@ const Garage = require("../models/Garage");
 // const Whip = require("../models/Whip");
 
 const index = (req, res) => {
-  Garage.findOne({ owner: req.body.owner }, (err, garage) => {
+  console.log(req.body);
+  Garage.findOne({ owner: req.query.owner }, (err, garage) => {
     if (err) {
       res.status(400).json(err);
       return;
