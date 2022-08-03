@@ -1,4 +1,5 @@
 const User = require("../models/User");
+const Garage = require("../models/Garage");
 const bcrypt = require("bcrypt");
 
 const signup = async (req, res) => {
@@ -13,6 +14,7 @@ const signup = async (req, res) => {
       }
       User.create({ name: req.body.name, password: hash }).then((user) => {
         res.json(user);
+        Garage.create({ owner: user._id });
       });
     });
   }
