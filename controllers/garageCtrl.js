@@ -60,23 +60,23 @@ const show = (req, res) => {
 };
 
 const update = (req, res) => {
-  Garage.findById(req.body.garageId)
-    .then((garage) => {
-      let whip = garage.whips.id(req.params.id);
-      whip.remove();
-      garage.whips.push({
+  Garage.findByIdAndUpdate(req.body.garageId, {
+    $set: {
+      whips: {
         make: req.body.make,
         model: req.body.model,
         year: req.body.year,
         img: req.body.img,
         description: req.body.description,
-      });
-      garage.save();
-    })
-    .then(() => {
-      res.redirect("/garage");
-    })
-    .catch((err) => {});
+      },
+    },
+  }).then((garage, err) => {
+    if (err) {
+      res.status(400).json(err);
+      return;
+    }
+    res.json("success!");
+  });
 };
 
 function deleteWhip(req, res) {
