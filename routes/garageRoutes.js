@@ -14,9 +14,9 @@ router.put("/", garageCtrl.createWhip);
 router.get("/:id", garageCtrl.show);
 
 // update
-router.put("/:id", garageCtrl.update);
+router.put("/:id/edit", garageCtrl.update);
 
 // delete
-router.delete("/:id", garageCtrl.delete);
+router.put("/:id", garageCtrl.delete);
 
 module.exports = router;

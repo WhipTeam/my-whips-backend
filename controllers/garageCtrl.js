@@ -80,17 +80,19 @@ const update = (req, res) => {
 };
 
 function deleteWhip(req, res) {
-  Garage.findById(req.body.garageId, (err, garage) => {
+  console.log(req.params.id);
+  console.log(req.body.garageId);
+  Garage.findByIdAndUpdate(
+    req.body.garageId,
+    { $pull: { whips: { _id: req.params.id } } },
+    { new: true }
+  ).then((garage, err) => {
     if (err) {
       res.status(400).json(err);
       return;
     }
-
-    let whips = garage.whips;
-
-    whips.id(req.params.id).remove();
-    garage.save((err) => err);
-    res.redirect("/garage");
+    console.log(err, garage);
+    res.json("success!");
   });
 }
 
