@@ -14,7 +14,11 @@ const signup = async (req, res) => {
       }
       User.create({ name: req.body.name, password: hash }).then((user) => {
         res.json(user);
-        Garage.create({ owner: user._id });
+        Garage.create({
+          owner: user._id,
+          name: `${user.name}'s Garage`,
+          img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9vs_p9MrrBh5YwyIej8h8ZW7oAhgJ2HBayVmRw47XeaIeg-t6yMoxox8N3QXjSdev-J0&usqp=CAU",
+        });
       });
     });
   }
