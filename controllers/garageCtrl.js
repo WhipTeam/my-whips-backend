@@ -60,22 +60,23 @@ const show = (req, res) => {
 };
 
 const update = (req, res) => {
-  Garage.findByIdAndUpdate(req.body.garageId, {
-    $set: {
-      whips: {
-        make: req.body.make,
-        model: req.body.model,
-        year: req.body.year,
-        img: req.body.img,
-        description: req.body.description,
-      },
-    },
-  }).then((garage, err) => {
-    if (err) {
-      res.status(400).json(err);
+  Garage.findById(req.body.garageId, (er, garage) => {
+    if (er) {
+      res.status(400).json(er);
       return;
     }
-    res.json("success!");
+    let whips = garage.whips;
+    console.log(whips);
+    whips.forEach((w) => {
+      if (w._id == req.params.id) {
+        w.make = req.body.make;
+        w.model = req.body.model;
+        w.year = req.body.year;
+        w.img = req.body.img;
+        w.description = req.body.description;
+      }
+    });
+    garage.save();
   });
 };
 
