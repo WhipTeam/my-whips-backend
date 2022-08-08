@@ -12,24 +12,7 @@ const cookieParser = require("cookie-parser");
 
 // load the env vars
 require("dotenv").config();
-const port = normalizePort(process.env.PORT || "8000");
-app.set("port", port);
-
-function normalizePort(val) {
-  const port = parseInt(val, 10);
-
-  if (isNaN(port)) {
-    // named pipe
-    return val;
-  }
-
-  if (port >= 0) {
-    // port number
-    return port;
-  }
-
-  return false;
-}
+const port = process.env.PORT || "8000";
 
 // require database
 require("./db/connection");
