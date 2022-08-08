@@ -12,6 +12,8 @@ const cookieParser = require("cookie-parser");
 
 // load the env vars
 require("dotenv").config();
+const port = normalizePort(process.env.PORT || "8000");
+app.set("port", port);
 
 // require database
 require("./db/connection");
@@ -24,6 +26,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(methodOverride("_method"));
 
+module.exports = app;
+
 // mount routes
 app.use("/garage", garageRoutes);
 app.use("/garages", garagesRoutes);
@@ -32,4 +36,6 @@ app.use("/signup", signupRoute);
 
 app.get("/", (req, res) => res.json("Welcome to My Whips!"));
 
-module.exports = app;
+server.listen(port, () => {
+  console.log(`listening on port:${port}`);
+});
