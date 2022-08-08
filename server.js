@@ -25,8 +25,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(methodOverride("_method"));
 
-module.exports = app;
-
 // mount routes
 app.use("/garage", garageRoutes);
 app.use("/garages", garagesRoutes);
@@ -35,6 +33,6 @@ app.use("/signup", signupRoute);
 
 app.get("/", (req, res) => res.json("Welcome to My Whips!"));
 
-server.listen(port, () => {
+app.listen(port, () => {
   console.log(`listening on port:${port}`);
 });
