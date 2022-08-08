@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-// require("dotenv").config();
+require("dotenv").config();
 
 const mongoURI = process.env.REACT_APP_DB_URL;
 

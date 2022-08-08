@@ -8,10 +8,10 @@ const signupRoute = require("./routes/userSignupRoute");
 const methodOverride = require("method-override");
 const cors = require("cors");
 const morgan = require("morgan");
+const cookieParser = require("cookie-parser");
 
 // load the env vars
 require("dotenv").config();
-const PORT = process.env.PORT;
 
 // require database
 require("./db/connection");
@@ -21,6 +21,8 @@ app.use(morgan("dev"));
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+app.use(methodOverride("_method"));
 
 // mount routes
 app.use("/garage", garageRoutes);
@@ -30,4 +32,4 @@ app.use("/signup", signupRoute);
 
 app.get("/", (req, res) => res.json("Welcome to My Whips!"));
 
-app.listen(PORT, () => console.log("listening on", PORT));
+module.exports = app;
