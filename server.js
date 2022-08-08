@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-const PORT = 4000;
 const userRoutes = require("./routes/userRoutes");
 const garageRoutes = require("./routes/garageRoutes");
 const garagesRoutes = require("./routes/garagesRoutes");
@@ -9,6 +8,10 @@ const signupRoute = require("./routes/userSignupRoute");
 const methodOverride = require("method-override");
 const cors = require("cors");
 const morgan = require("morgan");
+
+// load the env vars
+require("dotenv").config();
+const PORT = process.env.PORT;
 
 // require database
 require("./db/connection");

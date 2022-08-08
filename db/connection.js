@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 
-const mongoURI = "mongodb://localhost:27017/my-whips";
+require("dotenv").config();
+
+const mongoURI = process.env.MONGODB_URL;
 
 mongoose
   .connect(mongoURI, {
